@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi CV</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Tema claro (predeterminado) */
+        body.light-theme {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        /* Tema oscuro */
+        body.dark-theme {
+            font-family: Arial, sans-serif;
+            color: #f4f4f9;
+            background-color: #333;
+        }
+
+        /* Botón de cambio de tema en la esquina superior izquierda */
+        .theme-toggle {
+            position: absolute;
+            top: 1em;
+            left: 1em;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            background-color: #80bfb0;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .theme-toggle:hover {
+            background-color: #66a495;
+        }
+
+        /* Centrando el contenido principal */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 3em;
+        }
+
+        h1 {
+            color: #80bfb0;
+            font-size: 2.5em;
+            margin-top: 1em;
+        }
+
+        /* Imagen de perfil */
+        .profile-pic {
+            width: 15%;
+            height: 15%;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 1em 0;
+            border: 4px solid #80bfb0;
+            transition: transform 0.3s ease;
+        }
+        .profile-pic:hover {
+            transform: scale(1.15);
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            max-width: 600px;
+            text-align: center;
+            margin: 0.5em 0;
+        }
+
+        /* Sección de habilidades */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 600px;
+            margin: 2em 0;
+        }
+        .skill {
+            background-color: #80bfb0;
+            color: #fff;
+            padding: 0.5em 1em;
+            margin: 0.5em;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .skill:hover {
+            transform: scale(0.95);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            width: 100%;
+            text-align: center;
+            margin-top: 85px;
+        }
+        footer a {
+            color: #80bfb0;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <!-- Botón para cambiar de tema -->
+    <button class="theme-toggle" onclick="toggleTheme()">Cambiar a modo oscuro</button>
+
+    <!-- Contenedor principal centrado -->
+    <div class="container">
+        <!-- Título con tu nombre -->
+        <h1>Rubén Aragón</h1>
+
+        <!-- Imagen de perfil -->
+        <img src="https://avatars.githubusercontent.com/u/106509818?v=4" alt="Foto de perfil" class="profile-pic" />
+
+        <!-- Descripción -->
+        <p>
+            Desarrollador apasionado con experiencia en diseño y desarrollo de aplicaciones web. Me gusta resolver problemas y aprender nuevas tecnologías. Tengo experiencia como practicante en una empresa tipo freelance con un equipo de desarrolladores de Venezuela donde aprendí y pude mejorar en lo siguiente:
+        </p>
+
+        <!-- Habilidades de programación -->
+        <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">React</div>
+            <div class="skill">Node.js</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Git</div>
+        </div>
+    </div>
+
+    <!-- Footer con enlaces a redes sociales -->
+    <footer>
+        <p>Contáctame en redes sociales</p>
+        <div class="social-links">
+            <a href="https://instagram.com/tuusuario" target="_blank">Instagram</a> |
+            <a href="https://github.com/tuusuario" target="_blank">GitHub</a>
+        </div>
+    </footer>
+
+    <!-- Script para cambiar de tema -->
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggleBtn = document.querySelector('.theme-toggle');
+            
+            // Cambia entre temas
+            body.classList.toggle('dark-theme');
+            body.classList.toggle('light-theme');
+            
+            // Actualiza el texto del botón
+            if (body.classList.contains('dark-theme')) {
+                themeToggleBtn.textContent = 'Cambiar a modo claro';
+            } else {
+                themeToggleBtn.textContent = 'Cambiar a modo oscuro';
+            }
+        }
+    </script>
+</body>
+</html>
